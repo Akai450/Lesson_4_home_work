@@ -16,13 +16,16 @@ func numbers() {
         if (item % 2 == 0) {
             num2 += "Числа кратные 2 -\(item), "
             print (num2)
-        } else if (item % 3 == 0) {
+        }
+        if (item % 3 == 0) {
             num3 += "Числа кратные 3 -\(item), "
             print (num3)
-        } else if (item % 4 == 0) {
+        }
+        if (item % 4 == 0) {
             num4 += "Числа кратные 4 -\(item), "
             print (num4)
-        } else if (item % 5 == 0) {
+        }
+        if (item % 5 == 0) {
             num5 += "Числа кратные 5 -\(item) "
             print (num5)
         }
@@ -103,20 +106,15 @@ let action = readLine()!
 func math (num1: Int, num2: Int, num3: Int) {
     if action == "+" {
         print (num1 + num2)
-    }
-    if action == "-" {
+    } else if action == "-" {
         print (num1 - num2)
-    }
-    if action == "*" {
+    } else if action == "*" {
         print (num1 * num2)
-    }
-    if action == "/" {
+    } else if action == "/" {
         print (num1 / num2)
-    }
-    if action == "sin" {
+    } else if action == "sin" {
         print (num1 / num2)
-    }
-    if action == "cos" {
+    } else if action == "cos" {
         print (num3 / num2)
 }
 }
