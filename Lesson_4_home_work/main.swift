@@ -30,11 +30,11 @@ func numbers() {
 }
 print(numbers())
 /*
-// Создать программу используя известные вам методы
-// Рассчитать сумму кредита. Изначально сумма - 1000000 сом
-// Процентная ставка в год - 24%
-// С каждым годом % снижается на 1
-// Рассчитать за какой срок человек сможет выплатить кредит, если на момент получения кредита его зарплата - 20000 сом и каждые 2 месяца она увеличивается на 2000
+ Создать программу используя известные вам методы
+ Рассчитать сумму кредита. Изначально сумма - 1000000 сом
+ Процентная ставка в год - 24%
+ С каждым годом % снижается на 1
+ Рассчитать за какой срок человек сможет выплатить кредит, если на момент получения кредита его зарплата - 20000 сом и каждые 2 месяца она увеличивается на 2000
  */
 var creditAmount: Float = 1_000_000
 var creditPercent: Float = 0.24
@@ -70,14 +70,32 @@ print("Миллион сом можно выплатить за \(month) мес�
  После того, как созданная ранее функция примет как аргумент созданную строку - вернет следующее (например) - “Яблоко - 6 символов \n Морковь - 7 символов” и т.д до последнего слова
 
  */
-var appleProducts = ["Apple", "Lisa", "Macintosh", "iPod", "iPhone", "iPad", "MacBook", "iMac", "AirPods", "AirTag", "HomePod", "AppleWatch", "iCloud", "AppleTV", "AppleMusic", "AppStore", "ApplePay", "Beats", "AppleStore", "Swift"]
+//Вариант 1
+//var appleProducts = ["Apple", "Lisa", "Macintosh", "iPod", "iPhone", "iPad", "MacBook", "iMac", "AirPods", "AirTag", "HomePod", "AppleWatch", "iCloud", "AppleTV", "AppleMusic", "AppStore", "ApplePay", "Beats", "AppleStore", "Swift"]
+//
+//func words (apple: [String]) {
+//    for word in appleProducts {
+//        print ("\(word) - \(word.count) символов")
+//    }
+//}
+//words(apple: appleProducts)
 
-func words (apple: [String]) {
-    for word in appleProducts {
-        print ("\(word) - \(word.count) символов")
+//Вариант 2
+var string = ""
+var appleProducts = "Apple, Lisa, Macintosh, iPod, iPhone, iPad, MacBook, iMac, AirPods, AirTag, HomePod, AppleWatch, iCloud, AppleTV, AppleMusic, AppStore, ApplePay, Beats, AppleStore, Swift"
+var count = 0
+
+for appleProducts in appleProducts {
+    if appleProducts != "," {
+        count += 1
+        string += String(appleProducts)
+    }
+    if appleProducts == "," {
+        print ("\(string) - \(count - 1) - символов")
+        count = 0
+        string = ""
     }
 }
-words(apple: appleProducts)
 
 print ("Какое действие совершить?\n +, -, *, /, sin, cos")
 let action = readLine()!
@@ -85,19 +103,24 @@ let action = readLine()!
 func math (num1: Int, num2: Int, num3: Int) {
     if action == "+" {
         print (num1 + num2)
-    } else if action == "-" {
+    }
+    if action == "-" {
         print (num1 - num2)
-    } else if action == "*" {
+    }
+    if action == "*" {
         print (num1 * num2)
-    } else if action == "/" {
+    }
+    if action == "/" {
         print (num1 / num2)
-    } else if action == "sin" {
+    }
+    if action == "sin" {
         print (num1 / num2)
-    } else if action == "cos" {
+    }
+    if action == "cos" {
         print (num3 / num2)
 }
 }
-    
+
 print ("Введите первое число")
 let firstNumberReadline = Int(readLine()!)
 print ("Введите второе число")
@@ -106,3 +129,4 @@ print ("Введите третье число")
 let thirdNumberReadline = Int(readLine()!)
 
 math (num1: firstNumberReadline!, num2: secondNumberReadline!, num3: thirdNumberReadline!)
+
